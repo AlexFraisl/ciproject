@@ -22,11 +22,12 @@ pipeline {
         }
 
         stage("BUILD"){
-            setup{
+		steps{
                 script{
                    sh "docker build -t dockeruser/projectname:$COMMIT_HASH ."         
                 }
             }
+        }
         }
             
     }
